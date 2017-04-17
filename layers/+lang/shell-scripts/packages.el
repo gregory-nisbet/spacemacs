@@ -61,7 +61,12 @@
       (defun spacemacs//setup-shell ()
         (when (and buffer-file-name
                    (string-match-p "\\.zsh\\'" buffer-file-name))
-          (sh-set-shell "zsh")))
+          (sh-set-shell "zsh"))) 
+      
+      (defun shell-default ()
+        "configuration settings for shell such as tab width"
+        (setq tabwidth shell-tab-width))
+      
       (add-hook 'sh-mode-hook 'spacemacs//setup-shell))))
 
 (defun shell-scripts/post-init-ggtags ()
@@ -79,3 +84,4 @@
       ;; we don't want to insert shebang lines automatically
       (remove-hook 'find-file-hook 'insert-shebang))))
 
+(add-hook 'sh-mode-hook #'shell-default)

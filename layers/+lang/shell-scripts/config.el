@@ -14,3 +14,5 @@
 (spacemacs|defvar-company-backends fish-mode)
 
 (spacemacs|define-jump-handlers sh-mode)
+
+(defvar shell-tab-width 8)
