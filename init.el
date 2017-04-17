@@ -32,3 +32,13 @@
   (spacemacs/setup-startup-hook)
   (require 'server)
   (unless (server-running-p) (server-start)))
+
+  
+(defun shell-default ()
+  (interactive)
+  "configuration settings for shell such as tab width"
+  (setq tab-width shell-tab-width))
+
+(defvar shell-tab-width 8)
+
+(advice-add 'shell :after 'shell-default)
